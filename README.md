@@ -29,7 +29,7 @@ SEO optimization tools
 ---
 
 
-***1. Clone the Repository**
+***1. Clone the Repository***
    ```bash
    git clone https://github.com/yaseenahammed8290/Healthcare-website.git
     ```
