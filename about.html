@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Healthcare</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+        .top-bar { background: #1a73e8; color: white; padding: 12px 0; font-size: 14px; }
+        .top-bar a { color: white; text-decoration: none; margin-right: 30px; }
+        .top-bar i { margin-right: 8px; }
+        .navbar { background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar-brand { font-size: 32px; font-weight: 800; color: #2c3e50; }
+        .nav-link { color: #555 !important; font-weight: 500; margin: 0 15px; transition: all 0.3s; }
+        .nav-link:hover { color: #1a73e8 !important; }
+        .page-header { background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%); padding: 80px 0; text-align: center; color: white; }
+        .page-header h1 { font-size: 48px; font-weight: 800; margin-bottom: 15px; }
+        .page-header p { font-size: 18px; opacity: 0.9; }
+        .about-section { padding: 80px 0; }
+        .section-title { font-size: 38px; font-weight: 700; color: #2c3e50; margin-bottom: 20px; }
+        .section-subtitle { color: #666; margin-bottom: 30px; }
+        .stat-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; margin-bottom: 30px; transition: all 0.3s; }
+        .stat-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .stat-card i { font-size: 50px; color: #1a73e8; margin-bottom: 20px; }
+        .stat-card h3 { font-size: 42px; font-weight: 800; color: #1a73e8; margin-bottom: 10px; }
+        .stat-card p { color: #666; }
+        .value-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; height: 100%; }
+        .value-card i { font-size: 50px; color: #1a73e8; margin-bottom: 20px; }
+        .value-card h4 { font-size: 24px; font-weight: 700; color: #2c3e50; margin-bottom: 15px; }
+        .value-card p { color: #666; line-height: 1.8; }
+        .team-member { text-align: center; background: white; padding: 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; transition: all 0.3s; }
+        .team-member:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .team-img { width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 20px; border: 5px solid #e8f4f8; }
+        .team-member h5 { font-size: 20px; font-weight: 700; color: #2c3e50; margin-bottom: 5px; }
+        .team-member span { color: #1a73e8; font-size: 14px; display: block; margin-bottom: 15px; }
+        .team-member p { color: #666; font-size: 14px; margin-bottom: 15px; }
+        .social-icons { display: flex; justify-content: center; gap: 10px; }
+        .social-icons a { width: 35px; height: 35px; background: #e8f4f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #1a73e8; text-decoration: none; transition: all 0.3s; }
+        .social-icons a:hover { background: #1a73e8; color: white; }
+        .footer { background: #1a1a2e; color: white; padding: 60px 0 20px; }
+        .footer h5 { font-weight: 700; margin-bottom: 20px; color: #1a73e8; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; }
+        .footer-links a:hover { color: #1a73e8; padding-left: 5px; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s; }
+        .social-links a:hover { background: #1a73e8; transform: translateY(-5px); }
+        .copyright { text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="mailto:shaikyaseen8290@gmail.com"><i class="fas fa-envelope"></i>shaikyaseen8290@gmail.com</a>
+                    <a href="tel:+916305569416"><i class="fas fa-phone"></i>+91 6305569416</a>
+                </div>
+                <div>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-heartbeat" style="color: #1a73e8;"></i> Healthcare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#departments">Departments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>About Healthcare</h1>
+            <p>Excellence in Healthcare With Compassionate Care</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4">
+                    <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&h=400&fit=crop" alt="Hospital" class="img-fluid rounded shadow">
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <h2 class="section-title">Welcome to Healthcare</h2>
+                    <p class="section-subtitle">Your trusted partner in health and wellness</p>
+                    <p>Healthcare has been serving the Machilipatnam community for over 15 years, providing world-class medical care with compassion and dedication. Our state-of-the-art facility is equipped with the latest medical technology and staffed by experienced healthcare professionals.</p>
+                    <p>We are committed to providing comprehensive healthcare services to patients across all age groups. Our team of expert doctors, nurses, and support staff work together to ensure the best possible outcomes for our patients.</p>
+                    <p>Located opposite the bus stand in Machilipatnam, we are easily accessible and open 24/7 to serve your healthcare needs. From routine checkups to complex surgical procedures, we offer a full spectrum of medical services under one roof.</p>
+                </div>
+            </div>
+
+            <div class="row text-center mb-5">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-users"></i>
+                        <h3>5000+</h3>
+                        <p>Patients Treated</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-user-md"></i>
+                        <h3>50+</h3>
+                        <p>Expert Doctors</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-hospital"></i>
+                        <h3>15+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-star"></i>
+                        <h3>4.9/5</h3>
+                        <p>Patient Rating</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-5">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title">Our Core Values</h2>
+                    <p class="section-subtitle">What makes us different</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-heart"></i>
+                        <h4>Compassionate Care</h4>
+                        <p>We treat every patient with empathy, respect, and dignity. Your comfort and wellbeing are our top priorities, and we strive to create a healing environment where you feel safe and cared for.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-award"></i>
+                        <h4>Clinical Excellence</h4>
+                        <p>Our commitment to excellence drives us to maintain the highest standards of medical care. We invest in advanced technology and continuous training to provide you with the best possible treatment.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="value-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Patient First</h4>
+                        <p>Every decision we make puts our patients first. From appointment scheduling to treatment plans, we ensure your needs and preferences are at the center of everything we do.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 text-center mb-4">
+                    <h2 class="section-title">Meet Our Leadership Team</h2>
+                    <p class="section-subtitle">Dedicated professionals committed to your health</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&h=300&fit=crop" alt="Doctor" class="team-img">
+                        <h5>Dr. Yaseenahammed Shaik</h5>
+                        <span>Founder & Chief Medical Officer</span>
+                        <p>MD, MBBS - 15+ years of experience in providing comprehensive healthcare services to the community.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&h=300&fit=crop" alt="Doctor" class="team-img">
+                        <h5>Dr. Fatima Khan</h5>
+                        <span>Head of Surgery</span>
+                        <p>MS, MBBS - Specialized in advanced surgical procedures with 12+ years of experience.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=300&h=300&fit=crop" alt="Doctor" class="team-img">
+                        <h5>Dr. Arjun Reddy</h5>
+                        <span>Chief of Emergency Medicine</span>
+                        <p>MD Emergency Medicine - Leading our 24/7 emergency department with 10+ years expertise.</p>
+                        <div class="social-icons">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title mb-4">Why Choose Healthcare?</h2>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 24px;"></i>
+                        <div>
+                            <h5>24/7 Emergency Services</h5>
+                            <p>Our emergency department is always open with experienced doctors and advanced life-saving equipment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 24px;"></i>
+                        <div>
+                            <h5>Advanced Medical Technology</h5>
+                            <p>State-of-the-art diagnostic and treatment equipment for accurate diagnosis and effective treatment.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 24px;"></i>
+                        <div>
+                            <h5>Affordable Healthcare</h5>
+                            <p>Quality healthcare services at reasonable costs with flexible payment options for all.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="d-flex align-items-start">
+                        <i class="fas fa-check-circle text-success me-3 mt-1" style="font-size: 24px;"></i>
+                        <div>
+                            <h5>Convenient Location</h5>
+                            <p>Easily accessible location opposite the bus stand in Machilipatnam with ample parking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-heartbeat"></i> Healthcare</h5>
+                    <p>Providing compassionate and quality healthcare services to the community. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="index.html#departments">Departments</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Departments</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html#departments">Cardiology</a></li>
+                        <li><a href="index.html#departments">Neurology</a></li>
+                        <li><a href="index.html#departments">Orthopedics</a></li>
+                        <li><a href="index.html#departments">Pediatrics</a></li>
+                        <li><a href="index.html#departments">Emergency</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> shaikyaseen8290@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 6305569416</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Opposite Bus Stand, Machilipatnam, Andhra Pradesh, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Healthcare. All rights reserved. | Designed & Developed by Yaseenahammed Shaik</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

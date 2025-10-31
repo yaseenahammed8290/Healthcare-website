@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare - Excellence in Healthcare With Compassionate Care</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; line-height: 1.6; color: #333; }
+        
+        /* Top Info Bar */
+        .top-bar { background: #1a73e8; color: white; padding: 12px 0; font-size: 14px; }
+        .top-bar a { color: white; text-decoration: none; margin-right: 30px; }
+        .top-bar i { margin-right: 8px; }
+        
+        /* Navbar */
+        .navbar { background: white; padding: 20px 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .navbar-brand { font-size: 32px; font-weight: 800; color: #2c3e50; }
+        .badge-item { display: flex; align-items: center; gap: 8px; padding: 8px 15px; background: #f0f7ff; border-radius: 20px; margin-right: 15px; font-size: 13px; color: #1a73e8; }
+        .badge-item i { color: #1a73e8; }
+        .nav-link { color: #555 !important; font-weight: 500; margin: 0 15px; transition: all 0.3s; }
+        .nav-link:hover { color: #1a73e8 !important; }
+        
+        /* Hero Section */
+        .hero-section { background: linear-gradient(135deg, #f5f9ff 0%, #e8f2ff 100%); padding: 80px 0; min-height: 600px; }
+        .hero-title { font-size: 52px; font-weight: 800; color: #2c3e50; line-height: 1.2; margin-bottom: 25px; }
+        .hero-title .highlight { color: #1a73e8; }
+        .hero-description { font-size: 16px; color: #666; margin-bottom: 35px; line-height: 1.8; }
+        .hero-stats { display: flex; gap: 50px; margin-bottom: 40px; }
+        .stat-item h3 { font-size: 38px; font-weight: 800; color: #1a73e8; margin-bottom: 5px; }
+        .stat-item p { font-size: 14px; color: #666; }
+        .btn-appointment { background: #1a73e8; color: white; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; transition: all 0.3s; margin-right: 15px; }
+        .btn-appointment:hover { background: #1557b0; color: white; transform: translateY(-2px); box-shadow: 0 5px 15px rgba(26,115,232,0.3); }
+        .btn-watch { background: white; color: #1a73e8; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 600; display: inline-block; border: 2px solid #1a73e8; transition: all 0.3s; }
+        .btn-watch i { margin-right: 8px; }
+        .hero-image-container { position: relative; }
+        .hero-image { width: 100%; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); }
+        .rating-badge { position: absolute; bottom: 30px; left: 30px; background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); }
+        .stars { color: #ffc107; font-size: 18px; margin-bottom: 5px; }
+        .rating-badge h4 { font-size: 28px; font-weight: 800; color: #2c3e50; margin: 5px 0; }
+        .rating-badge p { font-size: 13px; color: #999; margin: 0; }
+        .next-appointment { position: absolute; top: 30px; right: 30px; background: white; padding: 20px 25px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); min-width: 220px; }
+        .next-appointment h6 { font-size: 14px; color: #666; margin-bottom: 10px; }
+        .next-appointment h5 { font-size: 16px; font-weight: 700; color: #2c3e50; margin-bottom: 5px; }
+        .next-appointment p { font-size: 13px; color: #999; margin: 0; }
+        .next-appointment i { color: #1a73e8; font-size: 24px; margin-bottom: 10px; }
+        
+        /* Departments Section */
+        .section-title { font-size: 38px; font-weight: 700; color: #2c3e50; margin-bottom: 15px; text-align: center; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 50px; }
+        .department-card { background: white; padding: 40px 30px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; margin-bottom: 30px; transition: all 0.3s; border: 2px solid transparent; }
+        .department-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); border-color: #1a73e8; }
+        .department-card i { font-size: 50px; color: #1a73e8; margin-bottom: 20px; }
+        .department-card h4 { font-size: 20px; font-weight: 700; color: #2c3e50; margin-bottom: 15px; }
+        .department-card p { color: #666; font-size: 14px; }
+        
+        /* Services Section */
+        .service-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); margin-bottom: 30px; transition: all 0.3s; }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .service-image { width: 100%; height: 200px; object-fit: cover; }
+        .service-body { padding: 25px; }
+        .service-badge { background: #e8f5e9; color: #27ae60; padding: 5px 15px; border-radius: 20px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 15px; }
+        .service-card h4 { font-size: 20px; font-weight: 700; color: #2c3e50; margin-bottom: 15px; }
+        .service-card p { color: #666; margin-bottom: 15px; }
+        .service-card a { color: #1a73e8; text-decoration: none; font-weight: 600; }
+        
+        /* Doctors Section */
+        .doctor-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.08); text-align: center; margin-bottom: 30px; transition: all 0.3s; }
+        .doctor-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(0,0,0,0.15); }
+        .doctor-image { width: 100%; height: 280px; object-fit: cover; }
+        .doctor-body { padding: 25px; }
+        .doctor-card h4 { font-size: 22px; font-weight: 700; color: #2c3e50; margin-bottom: 5px; }
+        .doctor-card span { color: #1a73e8; font-size: 14px; display: block; margin-bottom: 15px; }
+        .doctor-card p { color: #666; font-size: 14px; margin-bottom: 20px; }
+        .doctor-social { display: flex; justify-content: center; gap: 10px; }
+        .doctor-social a { width: 35px; height: 35px; background: #f0f7ff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #1a73e8; text-decoration: none; transition: all 0.3s; }
+        .doctor-social a:hover { background: #1a73e8; color: white; }
+        
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%); padding: 80px 0; text-align: center; color: white; }
+        .cta-title { font-size: 42px; font-weight: 700; margin-bottom: 20px; }
+        .cta-description { font-size: 18px; margin-bottom: 30px; opacity: 0.9; }
+        .btn-cta { background: white; color: #1a73e8; padding: 15px 40px; border-radius: 30px; text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s; }
+        .btn-cta:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(255,255,255,0.3); }
+        
+        /* Footer */
+        .footer { background: #1a1a2e; color: white; padding: 60px 0 20px; }
+        .footer h5 { font-weight: 700; margin-bottom: 20px; color: #1a73e8; }
+        .footer-links { list-style: none; padding: 0; }
+        .footer-links li { margin-bottom: 10px; }
+        .footer-links a { color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; }
+        .footer-links a:hover { color: #1a73e8; padding-left: 5px; }
+        .social-links { display: flex; gap: 15px; margin-top: 20px; }
+        .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: all 0.3s; }
+        .social-links a:hover { background: #1a73e8; transform: translateY(-5px); }
+        .copyright { text-align: center; margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6); }
+        
+        @media (max-width: 768px) {
+            .hero-title { font-size: 36px; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .section-title { font-size: 28px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <a href="mailto:shaikyaseen8290@gmail.com"><i class="fas fa-envelope"></i>shaikyaseen8290@gmail.com</a>
+                    <a href="tel:+916305569416"><i class="fas fa-phone"></i>+91 6305569416</a>
+                </div>
+                <div>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat" style="color: #1a73e8;"></i> Healthcare
+            </a>
+            <div class="d-none d-lg-flex align-items-center me-auto ms-4">
+                <div class="badge-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Accredited</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-clock"></i>
+                    <span>24/7 Emergency</span>
+                </div>
+                <div class="badge-item">
+                    <i class="fas fa-star"></i>
+                    <span>4.9/5 Rating</span>
+                </div>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#departments">Departments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctors">Doctors</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <h1 class="hero-title">Excellence in <span class="highlight">Healthcare</span> With Compassionate Care</h1>
+                    <p class="hero-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <h3>15+</h3>
+                            <p>Years Experience</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>5000+</h3>
+                            <p>Patients Treated</p>
+                        </div>
+                        <div class="stat-item">
+                            <h3>50+</h3>
+                            <p>Medical Experts</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html" class="btn-appointment">Book Appointment</a>
+                        <a href="#" class="btn-watch"><i class="fas fa-play-circle"></i>Watch Our Story</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image-container">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=700&fit=crop" alt="Healthcare Professional" class="hero-image">
+                        <div class="rating-badge">
+                            <div class="stars">★★★★★</div>
+                            <h4>4.9/5</h4>
+                            <p>1,234 Reviews</p>
+                        </div>
+                        <div class="next-appointment">
+                            <i class="far fa-calendar-alt"></i>
+                            <h6>Next Available</h6>
+                            <h5>Today 2:30 PM</h5>
+                            <p>Dr. Sarah Johnson</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="py-5" id="departments">
+        <div class="container">
+            <h2 class="section-title">Our Medical Departments</h2>
+            <p class="section-subtitle">Comprehensive healthcare services across various specialties</p>
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h4>Cardiology</h4>
+                        <p>Expert heart care and cardiovascular treatment</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-brain"></i>
+                        <h4>Neurology</h4>
+                        <p>Advanced brain and nervous system care</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-bone"></i>
+                        <h4>Orthopedics</h4>
+                        <p>Bone and joint specialist treatment</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-child"></i>
+                        <h4>Pediatrics</h4>
+                        <p>Specialized care for children's health</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-eye"></i>
+                        <h4>Ophthalmology</h4>
+                        <p>Complete eye care and vision services</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-tooth"></i>
+                        <h4>Dentistry</h4>
+                        <p>Comprehensive dental and oral care</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-lungs"></i>
+                        <h4>Pulmonology</h4>
+                        <p>Respiratory and lung disease treatment</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="department-card">
+                        <i class="fas fa-procedures"></i>
+                        <h4>Emergency</h4>
+                        <p>24/7 emergency medical services</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-5 bg-light" id="services">
+        <div class="container">
+            <h2 class="section-title">Our Healthcare Services</h2>
+            <p class="section-subtitle">Comprehensive medical services for your health and wellness</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=250&fit=crop" alt="Medical Checkup" class="service-image">
+                        <div class="service-body">
+                            <span class="service-badge">Primary Care</span>
+                            <h4>Complete Health Checkup</h4>
+                            <p>Comprehensive health screening packages with advanced diagnostics and personalized health reports.</p>
+                            <a href="contact.html">Book Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=400&h=250&fit=crop" alt="Surgery" class="service-image">
+                        <div class="service-body">
+                            <span class="service-badge">Specialized</span>
+                            <h4>Advanced Surgery</h4>
+                            <p>State-of-the-art surgical facilities with experienced surgeons and modern equipment.</p>
+                            <a href="contact.html">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=400&h=250&fit=crop" alt="Lab Services" class="service-image">
+                        <div class="service-body">
+                            <span class="service-badge">Diagnostics</span>
+                            <h4>Laboratory Services</h4>
+                            <p>Advanced diagnostic laboratory with quick and accurate test results available 24/7.</p>
+                            <a href="contact.html">View Tests <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1583324113626-70df0f4deaab?w=400&h=250&fit=crop" alt="Radiology" class="service-image">
+                        <div class="service-body">
+                            <span class="service-badge">Imaging</span>
+                            <h4>Radiology & Imaging</h4>
+                            <p>Advanced imaging services including MRI, CT scans, X-rays, and ultrasound.</p>
+                            <a href="contact.html">Book Scan <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?w=400&h=250&fit=crop" alt="Pharmacy" class="service-image">
+                        <div class="service-body">
+                            <span class="service-badge">Medicines</span>
+                            <h4>24/7 Pharmacy</h4>
+                            <p>Round-the-clock pharmacy services with genuine medicines and online delivery.</p>
+                            <a href="contact.html">Visit Store <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=400&h=250&fit=crop" alt="Ambulance" class="service-image">
+                        <div class="service-body">
+                            <span class="service-badge">Emergency</span>
+                            <h4>Ambulance Services</h4>
+                            <p>Quick response ambulance services with trained paramedics available 24/7.</p>
+                            <a href="tel:+916305569416">Call Now <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors Section -->
+    <section class="py-5" id="doctors">
+        <div class="container">
+            <h2 class="section-title">Meet Our Expert Doctors</h2>
+            <p class="section-subtitle">Experienced medical professionals dedicated to your health</p>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=500&fit=crop" alt="Doctor" class="doctor-image">
+                        <div class="doctor-body">
+                            <h4>Dr. Yaseen Ahmed</h4>
+                            <span>Cardiologist</span>
+                            <p>15+ years experience in cardiovascular diseases and heart surgery</p>
+                            <div class="doctor-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&h=500&fit=crop" alt="Doctor" class="doctor-image">
+                        <div class="doctor-body">
+                            <h4>Dr. Priya Sharma</h4>
+                            <span>Neurologist</span>
+                            <p>12+ years in neurology and brain disorders treatment</p>
+                            <div class="doctor-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="doctor-card">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?w=400&h=500&fit=crop" alt="Doctor" class="doctor-image">
+                        <div class="doctor-body">
+                            <h4>Dr. Rajesh Kumar</h4>
+                            <span>Orthopedic Surgeon</span>
+                            <p>10+ years in bone and joint surgery and sports medicine</p>
+                            <div class="doctor-social">
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="cta-title">Need Medical Assistance?</h2>
+            <p class="cta-description">Book your appointment today and get expert healthcare services</p>
+            <a href="contact.html" class="btn-cta">Book Appointment Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5><i class="fas fa-heartbeat"></i> Healthcare</h5>
+                    <p>Providing compassionate and quality healthcare services to the community. Your health is our priority.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="#departments">Departments</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Departments</h5>
+                    <ul class="footer-links">
+                        <li><a href="#departments">Cardiology</a></li>
+                        <li><a href="#departments">Neurology</a></li>
+                        <li><a href="#departments">Orthopedics</a></li>
+                        <li><a href="#departments">Pediatrics</a></li>
+                        <li><a href="#departments">Emergency</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> shaikyaseen8290@gmail.com</li>
+                        <li><i class="fas fa-phone"></i> +91 6305569416</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Opposite Bus Stand, Machilipatnam, Andhra Pradesh, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2025 Healthcare. All rights reserved. | Designed & Developed by Yaseenahammed Shaik</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
