@@ -23,11 +23,7 @@ CSS3
 
 Bootstrap 5
 
-Optional integrations (for advanced users):
 
-Node.js / Flask backend for appointment booking
-
-Email API for contact forms
 
 SEO optimization tools
 ---
@@ -37,7 +33,9 @@ SEO optimization tools
    ```bash
    git clone https://github.com/yaseenahammed8290/Healthcare-website.git
     ```
+
 ***2.Open the Project***
+
 ```bash
 cd Healthcare-website
 ```  
@@ -54,7 +52,7 @@ Upload to GitHub Pages, Netlify, or Vercel (free & simple).
 
 ***5.Go Live***
 
-Share your new healthcare website with the world 🌍
+ Share your new healthcare website with the world 🌍
 ---
 
 
