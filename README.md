@@ -33,7 +33,6 @@ SEO optimization tools
    ```bash
    git clone https://github.com/yaseenahammed8290/Healthcare-website.git
     ```
-
 ***2.Open the Project***
 
 ```bash
